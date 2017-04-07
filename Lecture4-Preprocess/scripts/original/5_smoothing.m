@@ -1,0 +1,73 @@
+%-----------------------------------------------------------------------
+% Job saved on 01-Feb-2017 17:23:12 by cfg_util (rev $Rev: 6460 $)
+% spm SPM - SPM12 (6906)
+% cfg_basicio BasicIO - Unknown
+%-----------------------------------------------------------------------
+%%
+matlabbatch{1}.spm.spatial.smooth.data = {
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,1'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,2'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,3'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,4'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,5'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,6'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,7'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,8'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,9'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,10'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,11'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,12'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,13'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,14'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,15'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,16'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,17'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,18'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,19'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,20'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,21'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,22'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,23'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,24'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,25'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,26'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,27'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,28'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,29'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,30'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,31'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,32'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,33'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,34'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,35'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,36'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,37'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,38'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,39'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,40'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,41'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,42'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,43'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,44'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,45'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,46'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,47'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,48'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,49'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,50'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,51'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,52'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,53'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,54'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,55'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,56'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,57'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,58'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,59'
+                                          '/Users/skyeong/Desktop/spm_exdata/Finger/subj01/fmri/warfinger.nii,60'
+                                          };
+%%
+matlabbatch{1}.spm.spatial.smooth.fwhm = [6 6 6];
+matlabbatch{1}.spm.spatial.smooth.dtype = 0;
+matlabbatch{1}.spm.spatial.smooth.im = 0;
+matlabbatch{1}.spm.spatial.smooth.prefix = 's';
