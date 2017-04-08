@@ -264,7 +264,7 @@ Nh = size(TM.prev,2);
 Np = size(TM.prev,1);
 Nj = size(TM.next,2);
 
-if any(TM.next(:) > 1) | any(TM.next(:) < 0) | any(sum(TM.next,2) > 1)
+if any(TM.next(:) > 1) || any(TM.next(:) < 0) || any(sum(TM.next,2) > 1)
     error('All values in TM.next must be [0,1], and sum along rows must be [0,1]')
 end
 
@@ -277,7 +277,7 @@ for i = 1:Ni
     
     if r <= sum(TM.next(h,:))
         j = 1;
-        while j < Nj & r > TM.next(h,j)
+        while j < Nj && r > TM.next(h,j)
             r = r-TM.next(h,j);
             j = j+1;
         end
@@ -302,9 +302,9 @@ h = find(isfinite(row));
 %Nj = Nr^(1/Nc);
 
 if isempty(h)
-    r = floor(rand*Nj)+1;
+    r=floor(rand*Nj)+1;
 else
-    for r = 1:Nr
+    for r=1:Nr
         if all((row(h) - matrix(r,h)) == 0)
             break;
         elseif r==Nr

@@ -13,23 +13,19 @@ par_path=fullfile(proj_path,'optseq2_output');
 eff = zeros(10,6);
 for cnt=1:10
     
-    filename = sprintf('ex1-%03d.par',cnt);
-    T = read_parfile(fullfile(par_path,filename));
+    filename ;
+    T = read_parfile();
     
     clear C S;
     C{1}=T(strcmpi(T.name,'A'),:).onset/TR;
-    C{2}=T(strcmpi(T.name,'B'),:).onset/TR;
-    C{3}=T(strcmpi(T.name,'C'),:).onset/TR;
-    C{4}=T(strcmpi(T.name,'NULL'),:).onset/TR;
-    
     
     % Contrast Matrices
-    S.CM{1} = [1 0 0 0];     % A
-    S.CM{2} = [0 1 0 0];     % B
-    S.CM{3} = [0 0 1 0];     % C
-    S.CM{4} = [1 -1 0 0];    % A-B
-    S.CM{5} = [1 0 -1 0];    % A-C
-    S.CM{6} = [0 1 -1 0];    % B-C
+    S.CM{1} = [];  % contrast for evt A
+    S.CM{1} = [];  % contrast for evt B
+    S.CM{1} = [];  % contrast for evt C
+    S.CM{1} = [];  % contrast for evt A - B
+    S.CM{1} = [];  % contrast for evt A - C
+
     
     S.sots = C;     % onset times for each event-type in units of scans
     S.TR = TR;
