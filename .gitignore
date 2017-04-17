@@ -1,2 +1,8 @@
 *.zip
 data
+*.gz
+*.nii
+data
+rawdata
+preprocessed
+*.tsv
