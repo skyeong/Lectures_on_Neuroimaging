@@ -43,7 +43,8 @@ BetaValues = zeros(nsubj,ncond,nroi);
 for c = 1:nsubj
     subjname = subjlist{c};
     spm_name = fullfile(proj_path,'Analysis','FirstLevel',subjname,'SPM.mat');
-    
+    % change_SPMfile_path(spm_name,swa_path);
+
     % Make marsbar design object
     D = mardo(spm_name);
     

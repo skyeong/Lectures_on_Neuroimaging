@@ -1,13 +1,15 @@
 % Start marsbar to make sure spm_get works
-marsbar('on')
+marsbar('on'); 
+warning('off','all');
 
 % You might want to define the path for your project
 %--------------------------------------------------------------------------
 proj_path = '/Volumes/JetDrive/workshops/Neuroimaging/Lecture08-GroupAnal';
 fn_xls    = fullfile(proj_path,'subjlist.xlsx');
-T         = readtable(fn_xls);
-subjlist  = T.subjname;
-nsubj     = length(subjlist);
+
+T = readtable(fn_xls);
+subjlist = T.subjname;
+nsubj = length(subjlist);
 
 
 %--------------------------------------------------------------------------
@@ -37,12 +39,12 @@ nroi = length(roi_files);
 ncond = 4;
 event_duration = 0;  % default SPM event duration
 
-PCT_EVT = zeros(nsubj,ncond,nroi);
+TimeCourses = zeros(nsubj,ncond,nroi,bin_no);
 for c = 1:nsubj
     subjname = subjlist{c};
     spm_name = fullfile(proj_path,'Analysis','FirstLevel',subjname,'SPM.mat');
     % change_SPMfile_path(spm_name,swa_path);
-    
+
     % Make marsbar design object
     D = mardo(spm_name);
     
@@ -59,22 +61,35 @@ for c = 1:nsubj
         % Estimate design on ROI data
         E = estimate(D,Y);
         
-        % Get definition of all events in model
+        % Get definitions of all events in model
         [e_specs, e_names] = event_specs(E);
         n_events = size(e_specs,2);
         
-        % Return percent signal estimate for all events in design
-        pct_ev = zeros(n_events,1);
-        for e_s = 1:n_events,
-            pct_ev(e_s) = event_signal(E, e_specs(:,e_s),event_duration);
+        % Bin size in seconds for FIR (finite infinite response) model
+        bin_size = tr(E);
+        
+        % Length of FIR in seconds
+        fir_length = 24;
+        
+        % Number of FIR time bins to cover length of FIR
+        bin_no = fir_length / bin_size;
+        
+        % Options - here 'single FIR model, return estimated
+        opts = struct('single',1,'percent',1);
+        fir_tc = zeros(bin_no,n_events);
+        for e_s=1:n_events
+            fir_tc(:,e_s) = event_fitted_fir(E, e_specs(:,e_s), bin_size, bin_no, opts);
         end
         
-        % Compute average value over sessions
+        % Compute average timecourse over sessions
         for cond_i=1:length(xCon),
-            PCT_EVT(c,cond_i,r) = mean(pct_ev(e_specs(2,:)==cond_i));  % average over sessions
+            TimeCourses(c,cond_i,r,:) = mean(fir_tc(:,e_specs(2,:)==cond_i),2);  % average over sessions
         end
-        
     end
 end
 
-dlmwrite('~/Desktop/PCT_EVT.csv',PCT_EVT(:,:,1));  % Save for ROI1
+time = [0:bin_size:fir_length-bin_size];
+dlmwrite('~/Desktop/TimeCourses_con1.csv',TimeCourses(:,1,1,:));  % Save for Cond1&ROI1
+dlmwrite('~/Desktop/TimeCourses_con2.csv',TimeCourses(:,2,1,:));  % Save for Cond2&ROI1
+dlmwrite('~/Desktop/TimeCourses_con3.csv',TimeCourses(:,3,1,:));  % Save for Cond3&ROI1
+dlmwrite('~/Desktop/TimeCourses_con4.csv',TimeCourses(:,4,1,:));  % Save for Cond4&ROI1
