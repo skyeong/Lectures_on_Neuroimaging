@@ -3,7 +3,7 @@ function change_SPMfile_path(SPMfile,swa_path)
 % CHANGE MAIN PATH
 % ---------------------------------
 load(SPMfile);
-SPM.swd = targetdir;
+SPM.swd = swa_path;
 
 nfile = length(SPM.xY.VY);
 for j=1:nfile,

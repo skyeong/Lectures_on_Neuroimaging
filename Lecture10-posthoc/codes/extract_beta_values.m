@@ -37,13 +37,13 @@ roi_files = create_ROI(MNIcenters,RADIUS,roi_dir,fn_mask);
 %--------------------------------------------------------------------------
 nroi = length(roi_files);
 ncond = 4;
-event_duration = 0;  % default SPM event duration
 
 BetaValues = zeros(nsubj,ncond,nroi);
-for c = 1:nsubj
+for c = 1:5
     subjname = subjlist{c};
     spm_name = fullfile(proj_path,'Analysis','FirstLevel',subjname,'SPM.mat');
-    % change_SPMfile_path(spm_name,swa_path);
+    %swa_path = fullfile(proj_path,'preprocessed',subjname);
+    %change_SPMfile_path(spm_name,swa_path);
 
     % Make marsbar design object
     D = mardo(spm_name);
