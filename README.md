@@ -27,5 +27,11 @@ fMRI task design의 optimization하는 방법과 efficiency를 계산하는 방�
 ## Lecture 8 - GLM 실습 (그룹 데이터 분석)
 뇌영상 데이터 분석의 최종 결과는 그룹 데이터를 분석하고, 여기서 얻어진 결과를 보고하게 됩니다. 여러가지 그룹 분석을 직접 실습해 볼 예정입니다. 가령, one sample t-test, paired sample t-test, full factorial, flexible factorial 분석을 모두 실습해 보겠습니다.
 
-## Lecture 9 - 뇌영상 분석에서의 다중비교와 사후 검정
-그룹 데이터 분석의 결과 중에서 어떤 것이 유의미한 결과인지? multiple comparison correction은 무엇이고 어떻게 할 수 있는지?에 대해서 이론적인 개념과 실습을 병행하여 진행할 것입니다. 또한, 그룹 분석에서 유의한 차이를 보이는 영역의 activation 값을 뽑아서 사후 검정을 하는 방법에 대해서도 실습을 해 볼 예정입니다.
+## Lecture 9 - 뇌영상 분석에서의 다중비교 보정
+그룹 데이터 분석의 결과 중에서 어떤 것이 유의미한 결과인지? multiple comparison correction은 무엇이고 어떻게 할 수 있는지?에 대해서 이론적인 개념과 실습을 병행하여 진행할 것입니다. 
+
+## Lecture 10 - Posthoc analysis
+그룹 분석에서 유의한 차이를 보이는 영역의 beta 값을 추출하는 방법에 대해 실습합니다. 실습은 MarsBaR를 이용할 예정입니다. MarsBaR를 통해 추출한 beta 값은 추후에 correlation 분석이나, interaction 결과의 사후 통계 분석을 하는데 이용할 수 있습니다. 
+
+## Lecture 11 - Psychophysiological interaction (PPI)
+task fMRI 데이터에서 functional connectivity 분석을 하는 방법을 다룹니다. 이론적인 부분과 실습을 모두 병행할 예정입니다. 이번 실습에서는 standard PPI만 다룰 예정이지만, 이를 확장하면 generalized PPI 분석까지 할 수 있을 것입니다.
